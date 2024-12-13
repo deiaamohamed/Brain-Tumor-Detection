@@ -11,12 +11,24 @@
     <header>Brain Tumor Classifier</header>
     <div class="container result">
         <h1>Classification Result</h1>
-        <div class="result-content">
-            <p>The Image is: <strong>{{ tumor_type }}</strong></p>
-            <img src="{{ image_url }}" alt="Uploaded Brain MRI">
-        </div>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% else %}
+            <div class="result-content">
+                <p>The Image is: 
+                    {% if tumor_type == 0 %}
+                        <strong>Brain</strong>
+                    {% else %}
+                        <strong>No Brain</strong>
+                    {% endif %}
+                </p>
+                <p>Confidence: {{ confidence|floatformat:2 }}</p>
+                <img src="{{ image_url }}" alt="Uploaded Brain MRI">
+            </div>
+        {% endif %}
+
         <a href="/classifier/classify/">Classify Another Image</a>
     </div>
-    
 </body>
 </html>
