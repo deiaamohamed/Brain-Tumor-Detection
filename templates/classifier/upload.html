@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Brain MRI</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>Brain Tumor Classifier</header>
+    <div class="container">
+        <h1>Upload MRI Image</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="brain_image">Choose an image:</label>
+            <input type="file" name="brain_image" id="brain_image" required>
+            <button type="submit">Classify</button>
+        </form>
+    </div>
+</body>
+</html>

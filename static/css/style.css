@@ -1,0 +1,93 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #5e60ce;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, p {
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #5e60ce;
+    border-radius: 8px;
+    background: #f4f4f9;
+    cursor: pointer;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #5e60ce;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #4d4fba;
+}
+
+.result {
+    text-align: center;
+}
+
+.result p {
+    font-size: 18px;
+}
+
+.result a {
+    text-decoration: none;
+    color: #5e60ce;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.result a:hover {
+    color: #4d4fba;
+}
+
+.result-content {
+    display: flex; /* جعل العناصر في صف واحد */
+    align-items: center; /* توسيط عمودي */
+    justify-content: center; /* توسيط أفقي */
+    gap: 20px; /* مسافة بين النص والصورة */
+    text-align: center; /* توسيط النص */
+}
+
+.result-content img {
+    width: 150px; /* حجم الصورة */
+    height: auto; /* الحفاظ على نسبة العرض للطول */
+    border-radius: 15px; /* حواف منحنية */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
