@@ -25,6 +25,5 @@ urlpatterns = [
     path('classifier/',include('classifier.urls')),
 ]
 
-# إضافة إعدادات ملفات الميديا أثناء التطوير
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
