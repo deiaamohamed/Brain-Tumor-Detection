@@ -23,7 +23,19 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+.container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #5e60ce;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.container button:hover {
+    background: #4d4fba;
+}
 h1, h2, p {
     margin: 10px 0;
 }
