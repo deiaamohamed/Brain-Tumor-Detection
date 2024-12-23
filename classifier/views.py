@@ -81,6 +81,7 @@ def Visualization(request):
         'Analysis of distribution of pixel values (intensity) for images (Tumor)':'media\Pixel_Intensity_Distribution_(Tumor).png',  
         'Analyze the number of images in each category (Healthy/tumor).':r'media\Number_of Images_in_Each_Category.png',
         'Analyze the dimensions of images to see the diversity in their size':'media\Distribution_of_Image_Widths.png',
+        'Confusion Matrix of the Model':r"media\confusion.png"
     }
     # print(contextPage)
 
