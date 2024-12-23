@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain MRI Visualization</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .visualization-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* مسافة بين العناصر */
+        }
+
+        .visualization-item {
+            text-align: center;
+        }
+
+        .visualization-item img {
+            max-width: 90%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .visualization-item h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #5e60ce;
+        }
+    </style>
+</head>
+<body>
+    <header>Brain MRI Visualization</header>
+    <div class="container">
+        <ul>
+            <a href="/classifier/classify/"><button>Classify Image</button></a>
+            <a href="/classifier/visualization/"><button>Visualization</button></a>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Visualization Results</h2>
+        <div class="visualization-container">
+            {% for title, image_path in contextPage.items %}
+                <div class="visualization-item">
+                    <p>{{ title }}</p>
+                    <img src="/{{ image_path }}" alt="{{ title }}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
