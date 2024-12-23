@@ -48,3 +48,4 @@ class CNNmodel(nn.Module):
         out = self.leakyRelu(self.fc1(out))
         out = self.fc2(out)  # Output layer for classification
         return out
+        

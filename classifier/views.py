@@ -11,7 +11,7 @@ import seaborn as sns
 import numpy as np
 from PIL import Image, UnidentifiedImageError
 from torchvision import transforms
-from classifier.cnnModel import CNNmodel  
+from classifier.models import CNNmodel  
 
 logger = logging.getLogger(__name__)
 
@@ -29,14 +29,11 @@ def get_model():
 def classify_image(request):
     if request.method == "POST" and request.FILES.get('brain_image'):
         brain_image = request.FILES['brain_image']
-<<<<<<< HEAD
-
-=======
->>>>>>> 035fc80883d58711a9bd4477e6734d1d00ae4e7f
-        
         unique_filename = f"{uuid.uuid4()}_{brain_image.name}"
         image_path = os.path.join(settings.MEDIA_ROOT, unique_filename)
-
+        with open(image_path, 'wb') as f:
+            for chunk in brain_image.chunks():
+                f.write(chunk)
         # Preprocess 
         try:
             # Resize the image to 128x128, i hate my life 

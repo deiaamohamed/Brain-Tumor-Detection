@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classification Result</title>
+    <title>Brain Tumor Detection Result</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -24,19 +24,19 @@
             <p style="color: red;">{{ error }}</p>
         {% else %}
             <div class="result-content">
-                <p>The Image is: 
+                <p>The MRI scan: 
                     {% if tumor_type == 0 %}
-                        <strong>Brain</strong>
+                        <strong style="color: green;">No Tumor Detected</strong>
                     {% else %}
-                        <strong>No Brain</strong>
+                        <strong style="color: red;">Tumor Detected</strong>
                     {% endif %}
                 </p>
-                <p>Confidence: {{ confidence|floatformat:2 }}</p>
-                <img src="{{ image_url }}" alt="Uploaded Brain MRI">
+                <p>Confidence: {{ confidence|floatformat:2 }}%</p>
+                <img src="{{ image_url }}" alt="Uploaded Brain MRI" style="max-width: 100%; height: auto;">
             </div>
         {% endif %}
 
-        <a href="/classifier/classify/">Classify Another Image</a>
+        <a href="/classifier/classify/" class="button">Classify Another Image</a>
     </div>
 </body>
 </html>
