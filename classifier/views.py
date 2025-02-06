@@ -39,7 +39,7 @@ def classify_image(request):
             # Resize the image to 128x128, i hate my life 
             img = Image.open(image_path).convert('RGB').resize((128, 128))
             
-            # Apply transformations: عملت كدة رغم اني ظابطه في كود الترين للموديل بس عشان اتأكد
+            # Apply transformations:
             transform = transforms.Compose([
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  
@@ -76,12 +76,12 @@ def Visualization(request):
         'View a network with multiple samples of each (Healthy).':'media\Healthy_Brain_Grid.png',
         'View a network with multiple samples of each (Tumor).':'media\Tumor_Brain_Grid.png',
         'Dimensional reduction of image representation in two-dimensional space':'media\PCA_Visualization.png',
-        'Use Boxplot to compare dimensions.':'media\Boxplot_of_Image_Widths_by_Category.png',
+        ' the variation in image widths between the two categories. It may suggest differences in the data preprocessing or original dataset structure, which could influence subsequent analysis or model training.':'media\Boxplot_of_Image_Widths_by_Category.png',
         'Analysis of distribution of pixel values (intensity) for images (Healthy)':'media\Pixel_ntensity_Distribution_(Healthy).png',
         'Analysis of distribution of pixel values (intensity) for images (Tumor)':'media\Pixel_Intensity_Distribution_(Tumor).png',  
         'Analyze the number of images in each category (Healthy/tumor).':r'media\Number_of Images_in_Each_Category.png',
         'Analyze the dimensions of images to see the diversity in their size':'media\Distribution_of_Image_Widths.png',
-        'Confusion Matrix of the Model':r"media\confusion.png"
+        'Confusion Matrix':r"media\confusion.png"
     }
     # print(contextPage)
 
